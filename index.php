@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php require_once('./includes/init.php') ?>
+
 <head>
 
     <meta charset="utf-8">
@@ -28,33 +30,7 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Review Analysis</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="post.html">Requirements</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<?php require(INCLUDES_PATH . '/navbar.php') ?>
 
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('img/post-bg.jpg')">
@@ -93,13 +69,16 @@
                     <li>Written in Python.</li>
                 </ol>
                 <h2 class="section-heading">Development Team</h2>
-                <p style="line-height: 2"><img src="img/kryz.jpg" alt="Krzysztof Kozinski" style="float:left;width:60px;height:70px;">
-                Krzysztof Kozinski
+                <p style="line-height: 2"><img src="img/kryz.jpg" alt="Krzysztof Kozinski"
+                                               style="float:left;width:60px;height:70px;">
+                    Krzysztof Kozinski
                 </p>
-                <p style="line-height: 2"><img src="img/walter.jpg" alt="Walter Wu" style="float:left;width:70px;height:70px;">
+                <p style="line-height: 2"><img src="img/walter.jpg" alt="Walter Wu"
+                                               style="float:left;width:70px;height:70px;">
                     Walter Wu
                 </p>
-                <p style="line-height: 2"><img src="img/rui.jpg" alt="Rui Chen" style="float:left;width:70px;height:70px;">
+                <p style="line-height: 2"><img src="img/rui.jpg" alt="Rui Chen"
+                                               style="float:left;width:70px;height:70px;">
                     Rui Chen
                 </p>
             </div>
@@ -111,7 +90,7 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-preview">
-                <a href="html/posts/requirements.html">
+                <a href="html/posts/requirements.php">
                     <h2 class="post-title">
                         Requirements
                     </h2>
