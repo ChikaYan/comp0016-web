@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Research</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/clean-blog.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="../../index.html">Review Analysis</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.html">Home</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('../../img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-heading">
+                    <h1>Research</h1>
+                    <span class="meta">Posted on December 30, 2018</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <h2 class="section-heading">Existing Solutions</h2>
+                <p>Our task consists of predicting the rating (from 1 star to 5 stars) and estimating the helpfulness
+                    percentage (any number between 0 and 100) from a comment text. First one is considered to be a
+                    classification problem, where you need to take an object and classify it into several different
+                    categories. Second one is clearly a regression problem, where you need to predict a continuous
+                    value. Since training data (which contains text, rating and helpfulness) will be used, both tasks
+                    would be supervised learning. Thus, our project would focus on supervised machine learning on both
+                    classification and regression, and of course natural language processing. [1]
+                </p>
+
+                <p>Since above questions are very typical in machine learning, a lot of research has been done on them
+                    and many great solutions exist.</p>
+
+                <h3 style="font-style: italic">Bag of Words</h3>
+
+                <p>In terms of natural language processing, the most straightforward way is “bag of words”, which simply
+                    assigns each unique word with an index, and converts a piece of text into a vector that represents
+                    occurrence of each word. [2] This is the best way for beginners to get started, but is also very
+                    limited in performance due to the complexity of human language. For instance, when we say “good”,
+                    “helpful” or “nice” we usually mean it’s good, but if we say “not good”, “can’t say it’s helpful”,
+                    meaning of the sentence would be reversed. More advanced techniques are needed to deal with this
+                    kind of situation.</p>
+
+                <h3 style="font-style: italic">N-grams</h3>
+                <p>A better solution is n-grams. Instead of splitting text into individual words, it splits them into
+                    lists of n consecutive words -- so “not good” will not become “not” “good” and potentially confuse
+                    the algorithm. However, if we just use all the possible combinations of words, it will greatly slow
+                    down the training algorithm, and most of the result wouldn’t be useful (like “would not” or “not
+                    say”). So an important part of n-gram is to predict the occurrence of next word, and use the result
+                    to decide if the actual next word should be included in an n-gram sentence or not. [3]</p>
+
+                <p>There also exists much more advanced solutions like deep natural language processing. Some small
+                    tricks, such as excluding meaningless words (“a”, “the”, “and”, etc) and counting frequencies
+                    instead of occurrence, can also help a lot in improving the processing speed and accuracy.</p>
+
+                <p>NLP (Natural Language Processing) solutions are used to convert text into numeric representations
+                    that can be used by another code. It is the machine learning algorithm that handles the actual
+                    training and application of the model.</p>
+
+                <h3 style="font-style: italic">Linear Regression</h3>
+
+                <p>The most basic machine learning would be linear regression. It is a model that assumes a linear
+                    relationship between variables (x) and value (f(x)). For model with one variable only, it is as
+                    simple as solving the equation f(x) = m * x + c, finding the value of m and c and using them to
+                    predict f(x) for some x that’s unknown.[4] However, for our project, variable is a list of numbers
+                    that represent occurrence of different words/n-gram sentences, and things can get more complicated
+                    with multiple variables. That’s when techniques like cost function and gradient descent come into
+                    place. [5]</p>
+
+                <p>The idea of cost function is that: since the actual data won’t always fit into a perfect line (even
+                    if they have a very strong linear relationship), our goal is to find a hypothesis function h(x),
+                    which predicts the value from x as accurate as possible. And the accuracy is measure by cost
+                    function. It simply calculates the average difference between the actual value and the value
+                    predicted by h(x). If we can find a h(x) with minimal cost, that h(x) would be the most accurate
+                    model. [6]</p>
+
+                <p>In order to reduce the cost, gradient descent is used. It first selects a point on cost function
+                    graph and uses differentiation to find the direction towards local minimum point. It then changes
+                    the constants of h(x) (which are the variables in cost function) bit by bit, so the function
+                    gradually approaches the local minimal point (and for linear function local minimum is same as
+                    global minimum). Once it reaches minimal, the variable values of cost function will be used as
+                    constants in h(x), and a hypothesis with good accuracy is produced. [7]</p>
+
+                <h3 style="font-style: italic">Logistic Regression</h3>
+
+                <p>Although linear regression is great, it’s not ideal for classification problem, beacuse its range is
+                    ±infinity since it’s a y = mx + c type of function, which is not desirable as we want to yield
+                    probabilities of object x belonging to a certain class, which should always be between 0 and 1. As
+                    such for our first model we decided to use logistic regression which remedies this problem. Logistic
+                    regression always outputs values between 0 and 1. This is because its hypothesis function uses a
+                    logistic function f(t) = 1 / (1 + e-t) where t is usually the output from what would’ve been the
+                    hypothesis function in linear regression. [14] In fact, logistic regression works quite similarly to
+                    linear regression. </p>
+
+                <p>The cost function is also adapted using logarithms and when during training the hypothesis function’s
+                    prediction is compared to the real value y, the cost approaches infinity as the difference between
+                    h(x) and y approaches 1. In other words the more the hypothesis is incorrect, the more severe the
+                    punishment (and rate of change of punishment increases drastically). [15]
+                </p>
+
+                <h2 class="section-heading">Related Technologies</h2>
+                <p>Machine learning and NLP are very popular areas, there is a lot of sophisticated software. </p>
+
+                <p>MATLAB is a programming language that heavily focuses on maths. It is matrix-based and can express
+                    maths formula in a very natural way. It is often used to analyze data and develop algorithms. [8] It
+                    is also possible to use MATLAB with other programming languages (e.g. Python). MATLAB is a very good
+                    tool to learn maths behind machine learning, however, it also has some obvious drawbacks. Firstly,
+                    it is not free, thus it can cause unnecessary charges to Ocado if they need to modify our program in
+                    the future. Secondly, it is purely a tool for maths and research, and it doesn’t produce any
+                    deployable applications. [9]</p>
+
+                <p>Octave is a language similar to MATLAB. It’s usually used for solving mathematical problems and
+                    automated data processing. One advantage it has over MATLAB is that it’s a free software, so no
+                    budget is needed for using Ocative. [10] But it seems to have worse GUI, and it is still not good
+                    for production. [11]</p>
+
+                <p>Python is also a great tool for machine learning. Thanks to its open community, there are many
+                    reliable libraries to support both machine learning and NLP. Besides, it is a popular language and
+                    is very easy to learn. Unlike other two languages, python can build an application easily. However,
+                    it is considered to have a slow computational speed, and it can generate a lot of runtime errors as
+                    it’s a dynamic programming language. [8]</p>
+
+                <h2 class="section-heading">“Final” Decisions</h2>
+                <p>Since our project is heavily research-based, we’re meant to constantly experiment with different
+                    solutions and evaluate their performance. Thus our “final decisions” section would be quite
+                    different from an ordinary project -- we would choose a certain programming language and stick with
+                    it, but we won’t pick any particular methods of machine learning or NLP as our final decision.</p>
+
+                <p>In terms of programming language, Python has been chosen for this project. Main reasons are: firstly,
+                    all the team members have done Python last academic year, so we can get started more quickly with
+                    Python. Since our project was already delayed for 2 months due to some contract issue, being able to
+                    start quickly was very important for us. Secondly, our clients are more experienced with Python
+                    machine learning and NLP, so we can seek help from them if we encountered any issues when learning.
+                    Thirdly, Python is a free, open-source software, and it has a bunch of useful libraries and online
+                    tutorials.</p>
+
+                <p>As for the libraries, we decided to use NumPy, SciPy (which are needed for many maths-based
+                    libraries, such as Pandas and Scikit-learn), Pandas (which is the best library for data processing.
+                    Since we need to work with a huge amount of labelled data, Pandas can make things much easier) and
+                    Scikit-learn, which is a very popular machine learning and NLP library. Scikit-learn contains many
+                    useful algorithms for bag of words, n-gram, linear regression, logistic regression and so on, and it
+                    also has a very well written documentation. [12] Thus we believe it will be very helpful when
+                    learning and experimenting with different solutions.
+                </p>
+
+                <P>About the actual methods that we would use to implement the algorithm, as mentioned above, they are
+                    not fixed and can vary as we progress. But for our first prototype, we decided to implement “bag of
+                    words” from scratch to gain a better understanding of how everything works behind the scene, and we
+                    would use logistic regression to train a model that predicts rating, which is a classification
+                    problem.
+                </P>
+
+                <p>The reason why we decided not to do anything with linear regression and helpfulness prediction is
+                    that linear regression is a very fundamental method and we don’t expect it to produce a very good
+                    result. Besides, since behind the scenes both logistic and linear regression work very similarly, so
+                    we only need to try one of them to get a good understanding of both. Moreover, since our project was
+                    delayed for 5 weeks, we needed to find a balance in our available time and the prototype. We
+                    negotiated with our clients about this and they are happy about our plan.
+                </p>
+
+                <p>Since our project is research-based, evaluating our machine learning model would be an essential
+                    part. In order to demonstrate the algorithm better, we decided to use Jupyter Notebook, which is a
+                    useful tool for live code demo and visualisation, to write the evaluation report. [13]
+                </p>
+
+                <h2 class="section-heading">References</h2>
+                <ol>
+                    <li>"Types of Machine Learning Algorithms You Should Know", Towards Data Science, 2018. [Online].
+                        Available:
+                        https://towardsdatascience.com/types-of-machine-learning-algorithms-you-should-know-953a08248861.
+                        [Accessed: 20- Dec- 2018]
+                    </li>
+                    <li>"Working With Text Data — scikit-learn 0.20.2 documentation", Scikit-learn.org, 2018. [Online].
+                        Available: https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html.
+                        [Accessed: 20- Dec- 2018]
+                    </li>
+                    <li>P. Kumar and V. &rarr;, "An Introduction to N-grams: What Are They and Why Do We Need Them? -
+                        XRDS", XRDS, 2018. [Online]. Available:
+                        https://blog.xrds.acm.org/2017/10/introduction-n-grams-need/. [Accessed: 20- Dec- 2018]
+                    </li>
+                    <li>Scikit-learn, “Linear Regression for Machine Learning,” Machine Learning Mastery, 27-Nov-2018.
+                        [Online]. Available: https://machinelearningmastery.com/linear-regression-for-machine-learning/.
+                        [Accessed: 23-Dec-2018].
+                    </li>
+                    <li>A. Ng, “Week 1” Coursera. [Online]. Available:
+                        https://www.coursera.org/learn/machine-learning/home/week/1. [Accessed: 23-Dec-2018].
+                    </li>
+                    <li>A. Ng, “cost function,” Coursera. [Online]. Available:
+                        https://www.coursera.org/learn/machine-learning/supplement/nhzyF/cost-function. [Accessed:
+                        24-Dec-2018].
+                    </li>
+                    <li>A. Ng, “gradient-descent,” Coursera. [Online]. Available:
+                        https://www.coursera.org/learn/machine-learning/supplement/2GnUg/gradient-descent. [Accessed:
+                        24-Dec-2018].
+                    </li>
+                    <li>matlab, “What is MATLAB?,” Reconstructing an Image from Projection Data - MATLAB & Simulink
+                        Example. [Online]. Available: https://www.mathworks.com/discovery/what-is-matlab.html.
+                        [Accessed: 25-Dec-2018].
+                    </li>
+                    <li>M. Innat, “Preferable tools for machine learning - Python - MatLab - R,” Codementor. [Online].
+                        Available:
+                        https://www.codementor.io/innat_2k14/preferable-tools-for-machine-learning-python-matlab-r-jfozzpphz.
+                        [Accessed: 25-Dec-2018].
+                    </li>
+                    <li>Octave, “octave introduction,” Top (GNU Octave). [Online]. Available:
+                        https://octave.org/doc/v4.2.1/Introduction.html. [Accessed: 25-Dec-2018].
+                    </li>
+                    <li>“Which is better, MATLAB or Octave?,” Quora. [Online]. Available:
+                        https://www.quora.com/Which-is-better-MATLAB-or-Octave. [Accessed: 25-Dec-2018].
+                    </li>
+                    <li>Scikit-learn, “Working With Text Data¶,” 1.4. Support Vector Machines - scikit-learn 0.19.2
+                        documentation. [Online]. Available:
+                        https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html. [Accessed:
+                        25-Dec-2018].
+                    </li>
+                    <li>Jupyter, “Project Jupyter,” Project Jupyter. [Online]. Available: https://jupyter.org/.
+                        [Accessed: 26-Dec-2018].
+                    </li>
+                    <li>“Logistic regression,” Wikipedia, 09-Dec-2018. [Online]. Available:
+                        https://en.wikipedia.org/wiki/Logistic_regression#Definition_of_the_logistic_function.
+                        [Accessed: 26-Dec-2018].
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <ul class="list-inline text-center">
+                    <!--<li class="list-inline-item">-->
+                    <!--<a href="#">-->
+                    <!--<span class="fa-stack fa-lg">-->
+                    <!--<i class="fas fa-circle fa-stack-2x"></i>-->
+                    <!--<i class="fab fa-twitter fa-stack-1x fa-inverse"></i>-->
+                    <!--</span>-->
+                    <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="list-inline-item">-->
+                    <!--<a href="#">-->
+                    <!--<span class="fa-stack fa-lg">-->
+                    <!--<i class="fas fa-circle fa-stack-2x"></i>-->
+                    <!--<i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>-->
+                    <!--</span>-->
+                    <!--</a>-->
+                    <!--</li>-->
+                    <li class="list-inline-item">
+                        <a href="https://github.com/ChikamaYan/comp0016-team24-ocado-review-analysis">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                        </a>
+                    </li>
+                </ul>
+                <!--<p class="copyright text-muted">Copyright &copy; Your Website 2018</p>-->
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="../../vendor/jquery/jquery.min.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="../../js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
