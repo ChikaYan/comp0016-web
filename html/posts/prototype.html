@@ -90,9 +90,24 @@
                 </p>
 
                 <h2 class="section-heading">System Architecture</h2>
-                <p>Since our project is research-based, our most of our program would be using libraries and thus
-                    doesn’t have a very complex structure.
+
+
+                <img src="../../img/sys-arch.png" alt="System Architecture Diagram"
+                     style="float:left;max-width: 100%;height:auto;">
+                <br>
+
+                <p>To use our program, user needs to first pass in some labelled data, which is review text with a
+                    binary number indicating if the review is positive or not. Our program then uses Vectorizer to
+                    convert text into a numerical representation. The Logistic Regression model then trains itself with
+                    those data.
                 </p>
+
+                <p>After training, user can pass in any data with text only. Our program converts the text in the same
+                    way, and the Logistic Regression model will predict if the input text belongs to a positive or
+                    negative review.
+                </p>
+
+                <h2 class="section-heading">UML Diagram</h2>
 
                 <img src="../../img/uml.png" alt="UML Diagram"
                      style="float:left;max-width: 100%;height:auto;">
@@ -115,6 +130,7 @@
                 </p>
 
                 <h2 class="section-heading">Implementations of Finished Functionalities</h2>
+
                 <p>As mentioned above, our current program is capable of taking in lists of comment text, converts them
                     into numerical representations, trains a binary classification model based on the rating of the
                     reviews and finally produces a model that can predict if a review is positive or negative by looking
@@ -155,6 +171,8 @@
                     can be done by just assigning how many reviews are to be used for training and testing is done
                     similarly.
                 </p>
+
+                <h2 class="section-heading">Experiments and Evaluations</h2>
 
                 <p>Apart from the actual implementation, experiments and evaluations are also very important aspects of
                     our project. We used Jupyter Notebook to run the experiments along with nice looking comments and
