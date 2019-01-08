@@ -94,76 +94,77 @@
                     us which requirements we must achieve and which requirements are of lower priority. In subsequent
                     meetings we further clarified any ambiguities and updated the requirements list as needed.</p>
 
-                <p>To gather our requirements and any other crucial information from our client we prepared a list of questions to ask before each meeting. 
+                <p>To gather our requirements and any other crucial information from our client we prepared a list of
+                    questions to ask before each meeting.
                     Here is an example list of the questions we prepared for one of the meetings:
                 </p>
-                <p>
-                    <ol>
-                        <li>What kind of application/user interface?</li>
-                        <li>Do we need to do the visualisation for reviews?</li>
-                        <li>Do we need to encourage users to review?</li>
-                        <li>What is generation and summarization(research level)?</li>
-                        <li>Ask clients to give data.</li>
-                    </ol>
-                </p>
+                <ol>
+                    <li>What kind of application/user interface?</li>
+                    <li>Do we need to do the visualisation for reviews?</li>
+                    <li>Do we need to encourage users to review?</li>
+                    <li>What is generation and summarization(research level)?</li>
+                    <li>Ask clients to give data.</li>
+                </ol>
 
                 <h2 class="section-heading">Personas</h2>
-                <ul>
-                    <p>                    <img src="../../img/adam.jpg" alt="adam"
-                        style="float:left;max-width: 100%;height:auto;"><br></p>
-                    <li>Adam Smith is a 25 year old software engineer who manages and develops code for various aspects
-                        of his organisation's processes.
-                        Part of his job is to research and implement new possible innovations that could improve the
-                        company's performance.
-                        He is very proficient with programming in many languages including python and implementing new
-                        ideas into the system.
-                        If given someone's code to work with he'd appreciate if it was clear, well structured and
-                        flexible so that he can easily adapt
-                        what is useful and make any necessary refactoring or debugging without severe headaches.
-                    </li>
-                    <p>                    <img src="../../img/ben.jpg" alt="ben"
-                        style="float:left;max-width: 100%;height:auto;"><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-                        <p></p>
-                    <p>
-                        <li>Ben Johnson is a 35 year old administrator of the review system on his company's website. He
-                        doesn't understand languages like python as deeply as Adam
-                        but he is familiar with webpage related languages like HTML. His task is to manage and maintain
-                        the review section of the website and make sure that it
-                        fulfills its purpose of informing customers looking through the products. The natural language
-                        processing research can be useful to him but he may need some
-                        important visualisations of the analysis results.
-                        </li>
-                    </p>
-                </ul>
+
+                <img src="../../img/adam.jpg" alt="adam"
+                     style="float:left;max-width: 100%;height:auto;padding: 0 20%">
+
+                <p>Adam Smith is a 25 year old software engineer who manages and develops code for various aspects
+                    of his organisation's processes.
+                    Part of his job is to research and implement new possible innovations that could improve the
+                    company's performance.
+                    He is very proficient with programming in many languages including python and implementing new
+                    ideas into the system.
+                    If given someone's code to work with he'd appreciate if it was clear, well structured and
+                    flexible so that he can easily adapt
+                    what is useful and make any necessary refactoring or debugging without severe headaches.
+                </p>
+                <img src="../../img/ben.jpg" alt="ben"
+                     style="float:left;max-width: 100%;height:auto;padding: 0 20%">
+
+                <p>Ben Johnson is a 35 year old administrator of the review system on his company's website. He
+                    doesn't understand languages like python as deeply as Adam
+                    but he is familiar with webpage related languages like HTML. His task is to manage and maintain
+                    the review section of the website and make sure that it
+                    fulfills its purpose of informing customers looking through the products. The natural language
+                    processing research can be useful to him but he may need some
+                    important visualisations of the analysis results.
+                </p>
+
                 <h2 class="section-heading">User Case List
                 </h2>
                 <p>Software Engineer:</p>
                 <ol>
-                    <li>Read the contents of the research data produced by us so they get the best picture possible of 
-                        the NLP situation for the review system, what NLP models work best and other interesting or important discoveries.
+                    <li>Read the contents of the research data produced by us so they get the best picture possible of
+                        the NLP situation for the review system, what NLP models work best and other interesting or
+                        important discoveries.
                     </li>
                     <li>Uses the delivered NLP source code as they see fit. This means they could:
                     </li>
-                    <ol type ="a">
-                        <li>Refactor it if the delivered code is slightly not in the right form to be used for   Ocado’s needs.
+                    <ol type="a">
+                        <li>Refactor it if the delivered code is slightly not in the right form to be used for Ocado’s
+                            needs.
                         </li>
-                        <li>Execute it. They could have a pre trained program or train it themselves manually. 
+                        <li>Execute it. They could have a pre trained program or train it themselves manually.
                         </li>
                         <li>There should also be infrastructure provided by us to test the NLP program in good detail.
                         </li>
                     </ol>
                     <li>They can insert some of their review data from their website into the program.
                     </li>
-                    <li>Potentially could brief the Review System Admin on any important information they know themselves or even help the RSA with the source code.
+                    <li>Potentially could brief the Review System Admin on any important information they know
+                        themselves or even help the RSA with the source code.
                     </li>
                 </ol>
-                
+
                 <p>Review System Admin:</p>
                 <ol>
-                    <li>Like software engineer, they can read the contents of the research report to 
+                    <li>Like software engineer, they can read the contents of the research report to
                         be better able to understand the NLP solutions we came up with and why they are the best.
                     </li>
-                    <li>As the admin of the review system they can also provide review data that 
+                    <li>As the admin of the review system they can also provide review data that
                         they have access to to parse as input into the NLP program.
                     </li>
                     <li>Make use of the visualisations of the review analysis results as they see fit.
@@ -184,7 +185,7 @@
 
 
                 <h2 class="section-heading">Moscow requirement list</h2>
-                <p style = "color: blue">Non-functional requirements in blue.</p>
+                <p style="color: blue">Non-functional requirements in blue.</p>
                 <p> Functional requirements in black.</p>
                 <p>Must Have</p>
                 <ul>
@@ -192,7 +193,7 @@
                         based on the comment text.
                     </li>
                     <ul>
-                        <li style = "color: blue">We must use basic natural language processing techniques</li>
+                        <li style="color: blue">We must use basic natural language processing techniques</li>
                         <li>We must produce some research on application of NLP in Ocado’s reviews (methodological and
                             experimental if possible).
                         </li>
@@ -208,7 +209,8 @@
                 </ul>
                 <p>Could Have</p>
                 <ul>
-                    <li><span style = "color: blue">We could use Deep NLP techniques</span> and develop our program into generation and summarization
+                    <li><span style="color: blue">We could use Deep NLP techniques</span> and develop our program into
+                        generation and summarization
                         stages.
                     </li>
                     <li>
