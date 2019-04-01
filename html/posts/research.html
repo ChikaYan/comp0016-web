@@ -55,6 +55,9 @@
                     <a class="nav-link" href="design.html">Design</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="testing.html">Testing</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="evaluation.html">Evaluation</a>
                 </li>
                 <li class="nav-item">
@@ -86,151 +89,173 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <h2 class="section-heading">Existing Solutions</h2>
+
                 <p>Our task consists of predicting the rating (from 1 star to 5 stars) and estimating the helpfulness
                     percentage (any number between 0 and 100) from a comment text. First one is considered to be a
                     classification problem, where you need to take an object and classify it into several different
-                    categories. Second one is clearly a regression problem, where you need to predict a continuous
-                    value. Since training data (which contains text, rating and helpfulness) will be used, both tasks
-                    would be supervised learning. Thus, our project would focus on supervised machine learning on both
-                    classification and regression, and of course natural language processing. [1]
-                </p>
+                    categories. The second one is more likely a regression problem, where you need to predict a
+                    continuous value. However, the values must be between 0% to 100%. Besides, most of the reviews don’t
+                    have many votes, values such as 0, 1, 1/2, 1/3 etc appear a lot, thus it’s possible to treat this as
+                    a classification problem as well. Since training data (which contains text, rating and helpfulness)
+                    will be used, both tasks would be supervised learning. Thus, our project would focus on supervised
+                    machine learning on classification and possibly regression, and of course natural language
+                    processing. [1]</p>
 
-                <p>Since above questions are very typical in machine learning, a lot of research has been done on them
-                    and many great solutions exist.</p>
+                <p>Since the above questions are very typical in machine learning, a lot of research has been done on
+                    them and many great solutions exist.</p>
+
+                <h2 class="section-heading">Natural Language Processing (NLP)</h2>
 
                 <h3 style="font-style: italic">Bag of Words</h3>
 
                 <p>In terms of natural language processing, the most straightforward way is “bag of words”, which simply
                     assigns each unique word with an index, and converts a piece of text into a vector that represents
-                    occurrence of each word. [2] This is the best way for beginners to get started, but is also very
+                    the occurrence of each word. [2] This is the best way for beginners to get started, but is also very
                     limited in performance due to the complexity of human language. For instance, when we say “good”,
                     “helpful” or “nice” we usually mean it’s good, but if we say “not good”, “can’t say it’s helpful”,
-                    meaning of the sentence would be reversed. More advanced techniques are needed to deal with this
+                    the meaning of the sentence would be reversed. More advanced techniques are needed to deal with this
                     kind of situation.</p>
 
                 <h3 style="font-style: italic">N-grams</h3>
+
                 <p>A better solution is n-grams. Instead of splitting text into individual words, it splits them into
                     lists of n consecutive words -- so “not good” will not become “not” “good” and potentially confuse
                     the algorithm. However, if we just use all the possible combinations of words, it will greatly slow
                     down the training algorithm, and most of the result wouldn’t be useful (like “would not” or “not
-                    say”). So an important part of n-gram is to predict the occurrence of next word, and use the result
-                    to decide if the actual next word should be included in an n-gram sentence or not. [3]</p>
+                    say”). So an important part of n-gram is to predict the occurrence of the next word and use the
+                    result to decide if the actual next word should be included in an n-gram sentence or not. [3]</p>
 
-                <p>There also exists much more advanced solutions like deep natural language processing. Some small
-                    tricks, such as excluding meaningless words (“a”, “the”, “and”, etc) and counting frequencies
-                    instead of occurrence, can also help a lot in improving the processing speed and accuracy.</p>
+                <h3 style="font-style: italic">Term Frequency-Inverse Document Frequency (TF-IDF) (Rui fills this in
+                    plz)</h3>
 
-                <p>NLP (Natural Language Processing) solutions are used to convert text into numeric representations
-                    that can be used by another code. It is the machine learning algorithm that handles the actual
-                    training and application of the model.</p>
+                <p>Tf means term-frequency while tf–idf means term-frequency times inverse document-frequency. In a
+                    large text corpus, some words will be very present (e.g. “the”, “a”, “is” in English) hence carrying
+                    very little meaningful information about the actual contents of the document. If we were to feed the
+                    direct count data directly to a classifier those very frequent terms would shadow the frequencies of
+                    rarer yet more interesting terms. In order to re-weight the count features into floating point
+                    values suitable for usage by a classifier, it is very common to use the tf–idf transform.
+                    <sup>[20]</sup></p>
+
+                <h3 style="font-style: italic">Word Embedding</h3>
+                <p>Word Embedding is a technique that is usually applied in Neural Networks. Briefly speaking, it
+                    converts a single word into a vector to allow additional information to be presented. In the area of
+                    NLP, the information is usually how close is this word to other words in terms of their meanings.
+                    E.g., “great” and “good” will have a similar vector representation.[15] This can help Machine
+                    Learning models to “understand” the human language better and produce more accurate
+                    predictions. </p>
+
+
+                <h2 class="section-heading">Machine Learning</h2>
+
+                <p>NLP solutions are used to convert text into numeric representations that can be used by another code.
+                    It is the machine learning algorithm that handles the actual training and application of the
+                    model.</p>
 
                 <h3 style="font-style: italic">Linear Regression</h3>
 
-                <p>The most basic machine learning would be linear regression. It is a model that assumes a linear
-                    relationship between variables (x) and value (f(x)). For model with one variable only, it is as
-                    simple as solving the equation f(x) = m * x + c, finding the value of m and c and using them to
-                    predict f(x) for some x that’s unknown.[4] However, for our project, variable is a list of numbers
-                    that represent occurrence of different words/n-gram sentences, and things can get more complicated
-                    with multiple variables. That’s when techniques like cost function and gradient descent come into
-                    place. [5]</p>
-
-                <p>The idea of cost function is that: since the actual data won’t always fit into a perfect line (even
-                    if they have a very strong linear relationship), our goal is to find a hypothesis function h(x),
-                    which predicts the value from x as accurate as possible. And the accuracy is measure by cost
-                    function. It simply calculates the average difference between the actual value and the value
-                    predicted by h(x). If we can find a h(x) with minimal cost, that h(x) would be the most accurate
-                    model. [6]</p>
-
-                <p>In order to reduce the cost, gradient descent is used. It first selects a point on cost function
-                    graph and uses differentiation to find the direction towards local minimum point. It then changes
-                    the constants of h(x) (which are the variables in cost function) bit by bit, so the function
-                    gradually approaches the local minimal point (and for linear function local minimum is same as
-                    global minimum). Once it reaches minimal, the variable values of cost function will be used as
-                    constants in h(x), and a hypothesis with good accuracy is produced. [7]</p>
+                <p>Linear Regression is one of the most basic Machine Learning models. It works by assuming a linear
+                    relationship between input and output [4] and trying to use a cost function and gradient descent to
+                    minimize the overall cost (i.e., the outputs of the model have smallest overall difference from the
+                    expected values) [5][7]</p>
 
                 <h3 style="font-style: italic">Logistic Regression</h3>
 
-                <p>Although linear regression is great, it’s not ideal for classification problem, beacuse its range is
-                    ±infinity since it’s a y = mx + c type of function, which is not desirable as we want to yield
-                    probabilities of object x belonging to a certain class, which should always be between 0 and 1. As
-                    such for our first model we decided to use logistic regression which remedies this problem. Logistic
-                    regression always outputs values between 0 and 1. This is because its hypothesis function uses a
-                    logistic function f(t) = 1 / (1 + e<sup>-t</sup>) where t is usually the output from what would’ve been the
-                    hypothesis function in linear regression. [14] In fact, logistic regression works quite similarly to
-                    linear regression. </p>
+                <p>Logistic Regression is very similar to Linear Regression. In fact, their only difference is that the
+                    output of Logistic Regression is limited within range 0 to 1 by applying a logistic function.[14]
+                    Moreover, the cost function and gradient descent are also adapted to suit the new functions, but
+                    they still work together to find out the optimal parameters that can reduce the cost on train
+                    samples to a minimal.[6]</p>
 
-                <p>The cost function is also adapted using logarithms and when during training the hypothesis function’s
-                    prediction is compared to the real value y, the cost approaches infinity as the difference between
-                    h(x) and y approaches 1. In other words the more the hypothesis is incorrect, the more severe the
-                    punishment (and rate of change of punishment increases drastically). [15]
-                </p>
+                <h3 style="font-style: italic">Decision Tree and Random Forest</h3>
+
+                <p>Decision Tree is the most basic non-linear model. As its name suggests, it creates a binary tree as
+                    the estimator.</p>
+
+                <p>The way it works is very simple: it starts at the root node with all samples at hand, then it scans
+                    through all features and finds out one that can separate most of the samples out. Then it splits the
+                    data set using this feature and recursively repeats this process. [16]</p>
+
+                <p>However, a single Decision Tree on its own can easily overfit, since it doesn’t know when to stop
+                    growing. Random Forest solves this issue by having multiple Decision Trees and combining their
+                    results together to make predictions. Since there are many trees which can restrict each other from
+                    overfitting, Random Forest is known as a very easy-to-use model that doesn’t need many
+                    hyperparameter tuning. [17]</p>
+
+                <h3 style="font-style: italic">Gradient Boosting Machine</h3>
+
+                <p>Gradient Boosting Machine is a very powerful but computational expensive model. It improves the
+                    parameters of a loss function by training many “weak learners” and using them to reduce the overall
+                    loss. However, since weak learners are extremely weak, a huge amount of them is required for the
+                    model to have a good performance. Moreover, it also needs to be carefully tuned to prevent
+                    overfitting. [18]</p>
+
+                <h3 style="font-style: italic">Feedforward Neural Network</h3>
+
+                <p>Neural Network is a very effective but complex model. It mimics the human brain and works by using
+                    many layers that contain neurons. Each neuron can activate (i.e., sending values to neurons in the
+                    next layer that connected to current neuron) by receiving values from neurons in the previous layer.
+                    Values are also controlled by weights, which can be different for every pair of neurons. Weights are
+                    the same as parameters in other models and need to be optimized during training.[19]</p>
 
                 <h2 class="section-heading">Related Technologies</h2>
-                <p>Machine learning and NLP are very popular areas, there is a lot of sophisticated software. </p>
+
+                <p>Machine learning and NLP are very popular areas, there is a lot of sophisticated software.</p>
 
                 <p>MATLAB is a programming language that heavily focuses on maths. It is matrix-based and can express
-                    maths formula in a very natural way. It is often used to analyze data and develop algorithms. [8] It
-                    is also possible to use MATLAB with other programming languages (e.g. Python). MATLAB is a very good
-                    tool to learn maths behind machine learning, however, it also has some obvious drawbacks. Firstly,
-                    it is not free, thus it can cause unnecessary charges to Ocado if they need to modify our program in
-                    the future. Secondly, it is purely a tool for maths and research, and it doesn’t produce any
-                    deployable applications. [9]</p>
+                    maths formulas in a very natural way. It is often used to analyze data and develop algorithms. [8]
+                    It is also possible to use MATLAB with other programming languages (e.g. Python). MATLAB is a very
+                    good tool to learn maths behind machine learning, however, it also has some obvious drawbacks.
+                    Firstly, it is not free, thus it can cause unnecessary charges to Ocado if they need to modify our
+                    program in the future. Secondly, it is purely a tool for maths and research, and it doesn’t produce
+                    any deployable applications. [9]</p>
 
                 <p>Octave is a language similar to MATLAB. It’s usually used for solving mathematical problems and
-                    automated data processing. One advantage it has over MATLAB is that it’s a free software, so no
-                    budget is needed for using Ocative. [10] But it seems to have worse GUI, and it is still not good
-                    for production. [11]</p>
+                    automated data processing. One advantage it has over MATLAB is that it’s free software, so no budget
+                    is needed for using Ocative. [10] But it seems to have worse GUI, and it is still not good for
+                    production. [11]</p>
 
                 <p>Python is also a great tool for machine learning. Thanks to its open community, there are many
-                    reliable libraries to support both machine learning and NLP. Besides, it is a popular language and
-                    is very easy to learn. Unlike other two languages, python can build an application easily. However,
-                    it is considered to have a slow computational speed, and it can generate a lot of runtime errors as
-                    it’s a dynamic programming language. [8]</p>
+                    reliable libraries to support both Machine Learning and NLP. Besides, it is a popular language and
+                    is very easy to learn. Unlike the other two languages, python can build an application easily.
+                    However, it is considered to have a slow computational speed, and it can generate a lot of runtime
+                    errors as it’s a dynamic programming language. [8]</p>
+
+                <h2 class="section-heading">[Potentially add comparisons among different python libraries]</h2>
 
                 <h2 class="section-heading">“Final” Decisions</h2>
+
                 <p>Since our project is heavily research-based, we’re meant to constantly experiment with different
                     solutions and evaluate their performance. Thus our “final decisions” section would be quite
                     different from an ordinary project -- we would choose a certain programming language and stick with
-                    it, but we won’t pick any particular methods of machine learning or NLP as our final decision.</p>
+                    it, but we won’t choose any particular methods of Machine Learning or NLP as our final decision.</p>
 
                 <p>In terms of programming language, Python has been chosen for this project. Main reasons are: firstly,
                     all the team members have done Python last academic year, so we can get started more quickly with
                     Python. Since our project was already delayed for 2 months due to some contract issue, being able to
                     start quickly was very important for us. Secondly, our clients are more experienced with Python
-                    machine learning and NLP, so we can seek help from them if we encountered any issues when learning.
-                    Thirdly, Python is a free, open-source software, and it has a bunch of useful libraries and online
+                    Machine Learning and NLP, so we can seek help from them if we encountered any issues when learning.
+                    Thirdly, Python is free, open-source software, and it has a bunch of useful libraries and online
                     tutorials.</p>
 
-                <p>As for the libraries, we decided to use NumPy, SciPy (which are needed for many maths-based
-                    libraries, such as Pandas and Scikit-learn), Pandas (which is the best library for data processing.
-                    Since we need to work with a huge amount of labelled data, Pandas can make things much easier) and
-                    Scikit-learn, which is a very popular machine learning and NLP library. Scikit-learn contains many
-                    useful algorithms for bag of words, n-gram, linear regression, logistic regression and so on, and it
-                    also has a very well written documentation. [12] Thus we believe it will be very helpful when
-                    learning and experimenting with different solutions.
-                </p>
+                <p>As for the libraries, we decided to use NumPy, SciPy, Pandas for data processing, TensorFlow for
+                    Neural Network and Scikit-learn, which is a very popular machine learning and NLP library.
+                    Scikit-learn contains many useful algorithms for “bag of words”, n-gram, linear regression, logistic
+                    regression and so on, and it also has a very well written documentation. [12] Thus we believe it
+                    will be very helpful when learning and experimenting with different solutions.</p>
 
-                <P>About the actual methods that we would use to implement the algorithm, as mentioned above, they are
-                    not fixed and can vary as we progress. But for our first prototype, we decided to implement “bag of
+                <p>About the actual methods that we would use to implement the algorithm, as mentioned above, they are
+                    not fixed and can vary as we progress. But for our first step, we decided to implement “bag of
                     words” from scratch to gain a better understanding of how everything works behind the scene, and we
-                    would use logistic regression to train a model that predicts rating, which is a classification
-                    problem.
-                </P>
-
-                <p>The reason why we decided not to do anything with linear regression and helpfulness prediction is
-                    that linear regression is a very fundamental method and we don’t expect it to produce a very good
-                    result. Besides, since behind the scenes both logistic and linear regression work very similarly, so
-                    we only need to try one of them to get a good understanding of both. Moreover, since our project was
-                    delayed for 5 weeks, we needed to find a balance in our available time and the prototype. We
-                    negotiated with our clients about this and they are happy about our plan.
-                </p>
+                    would use logistic regression to train a model that predicts star ratings, which is a classification
+                    problem. Then we would go into some non-linear algorithms like Random Forest. Eventually, if we have
+                    enough time we can try some advanced models like Neural Network. We would follow roughly the same
+                    procedure for helpfulness problem.</p>
 
                 <p>Since our project is research-based, evaluating our machine learning model would be an essential
                     part. In order to demonstrate the algorithm better, we decided to use Jupyter Notebook, which is a
-                    useful tool for live code demo and visualisation, to write the evaluation report. [13]
-                </p>
+                    useful tool for live code demo and visualisation, to write the evaluation report. [13]</p>
 
-                <h2 class="section-heading">References</h2>
+                <h2 class="section-heading">Reference</h2>
                 <ol>
                     <li>"Types of Machine Learning Algorithms You Should Know", Towards Data Science, 2018. [Online].
                         Available:
@@ -286,6 +311,33 @@
                     <li>“Logistic regression,” Wikipedia, 09-Dec-2018. [Online]. Available:
                         https://en.wikipedia.org/wiki/Logistic_regression#Definition_of_the_logistic_function.
                         [Accessed: 26-Dec-2018].
+                    </li>
+                    <li>Karani, D. (2019). “Introduction to Word Embedding and Word2Vec.” [online] Towards Data Science.
+                        Available at:
+                        https://towardsdatascience.com/introduction-to-word-embedding-and-word2vec-652d0c2060fa
+                        [Accessed 12 Feb. 2019].
+                    </li>
+                    <li>Gupta, P. (2019). “Decision Trees in Machine Learning.” [online] Towards Data Science. Available
+                        at: https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052 [Accessed 10
+                        Mar. 2019].
+                    </li>
+                    <li>Donges, N. (2019). “The Random Forest Algorithm.” [online] Towards Data Science. Available at:
+                        https://towardsdatascience.com/the-random-forest-algorithm-d457d499ffcd [Accessed 25 Mar. 2019].
+                    </li>
+                    <li>Brownlee, J. (2019). “A Gentle Introduction to the Gradient Boosting Algorithm for Machine
+                        Learning.” [online] Machine Learning Mastery. Available at:
+                        https://machinelearningmastery.com/gentle-introduction-gradient-boosting-algorithm-machine-learning/
+                        [Accessed 27 Mar. 2019].
+                    </li>
+                    <li>Fon.hum.uva.nl. (2019). “Feedforward neural networks 1. What is a feedforward neural network?”.
+                        [online] Available at:
+                        http://www.fon.hum.uva.nl/praat/manual/Feedforward_neural_networks_1__What_is_a_feedforward_ne.html
+                        [Accessed 26 Mar. 2019].
+                    </li>
+                    <li>Scikit-learn.org. (2019). 4.2. Feature extraction — scikit-learn 0.20.3 documentation. [online]
+                        Available at:
+                        https://scikit-learn.org/stable/modules/feature_extraction.html#tfidf-term-weighting [Accessed
+                        29 Mar. 2019].
                     </li>
                 </ol>
             </div>

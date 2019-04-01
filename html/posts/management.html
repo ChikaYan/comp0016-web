@@ -55,6 +55,9 @@
                     <a class="nav-link" href="design.html">Design</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="testing.html">Testing</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="evaluation.html">Evaluation</a>
                 </li>
                 <li class="nav-item">
@@ -85,21 +88,346 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <h2 class="section-heading">Existing Solutions</h2>
+                <h2 class="section-heading">Legal Issues</h2>
+                <h3 style="font-style: italic">Major Milestones and Quality Gates</h3>
+                <p>1. Implement a “bag of words” vectorizer to learn basics of Natural Language Processing.</p>
+                <p>2. Implement the first prototype, which makes use of “bag of words” and Logistic Regression to
+                    predict if a review is
+                    positive (star rating >= 3) or not by looking at its text.</p>
+                <p>3. Carry out experiments on the prototype, including hyperparameter tuning, learning curve plotting
+                    and comparing it
+                    to a baseline method.</p>
+                <p>4. Expand the NLP vectorizer to n-grams and experiment with it.</p>
+                <p>5. Build the program with a non-linear Machine Learning model, such as Decision Tree and Random
+                    Forest, and compare
+                    its performance with linear models.</p>
+                <p>6. Try various methods on helpfulness prediction and find a suitable one through experiments.</p>
+                <p>7. Integrate the code together to produce the final deliverable.</p>
+                <p>8. Tidying up and improving research materials, Jupyter Notebooks and code base.</p>
 
-                <p>Since above questions are very typical in machine learning, a lot of research has been done on them
-                    and many great solutions exist.</p>
+                <h3 style="font-style: italic">Team Roles and Deadlines</h3>
+                <table style="width:100%">
+                    <tr>
+                        <th>Major Milestones/Quality Gates No.</th>
+                        <th>Responsible Member</th>
+                        <th>Deadline</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Walter</td>
+                        <td>15th Dec 2018</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Krzysztof, Walter</td>
+                        <td>22nd Dec 2018</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Walter</td>
+                        <td>29th Dec 2018</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Rui</td>
+                        <td>25th Jan 2019</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Walter</td>
+                        <td>2nd Feb 2019</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Krzysztof, Walter, Rui</td>
+                        <td>3rd Mar 2019</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Krzysztof, Walter</td>
+                        <td>22nd Mar 2019</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Krzysztof, Walter, Rui</td>
+                        <td>22nd Apr 2019</td>
+                    </tr>
+                </table>
 
-                <h3 style="font-style: italic">Bag of Words</h3>
+                <p>Handover date: 22nd Apr 2019</p>
 
-                <p>In terms of natural language processing, the most straightforward way is “bag of words”, which simply
-                    assigns each unique word with an index, and converts a piece of text into a vector that represents
-                    occurrence of each word. [2] This is the best way for beginners to get started, but is also very
-                    limited in performance due to the complexity of human language. For instance, when we say “good”,
-                    “helpful” or “nice” we usually mean it’s good, but if we say “not good”, “can’t say it’s helpful”,
-                    meaning of the sentence would be reversed. More advanced techniques are needed to deal with this
-                    kind of situation.</p>
+                <h3 style="font-style: italic">Potential Liabilities</h3>
+                <p>As a group, we have the following liabilities:</p>
 
+                <p>Firstly and most importantly, We need to complete and deliver a project that satisfies the agreed
+                    requirements by the
+                    deadline. Based on our discussion about this project, the final requirements are delivering some
+                    code that learns
+                    from previous-labelled data and can be used to predict rating and helpfulness if the text of a
+                    review is inputted,
+                    as well as experimenting, evaluating and improving our code to producing some research reports. The
+                    agreed deadline
+                    for project submission is 23rd April, so we have to implement the above features and hand the code
+                    to our clients
+                    and UCL. In order to achieve that, we have made several milestones or quality gates to supervise our
+                    progress, so
+                    that as long as we work according to our plan, there won’t be any issue in finishing the work.</p>
+
+                <p>Secondly, we should not distribute the materials and data given by our clients without their consent.
+                    Since our
+                    project involves Machine Learning on reviews, our clients have given us some materials from Ocado
+                    for teaching
+                    purposes. Considering they might be internal training materials and are protected by Copyright, we
+                    definitely can’t
+                    post them online or send them to other people. Similarly, we were also given Ocado’s website data to
+                    train our
+                    Machine Learning model. The data contains review information such as text, rating and customer ID.
+                    Although this
+                    information is posted on Ocado’s website and is visible to everyone, since it is from Ocado’s data
+                    server, we
+                    shouldn’t make it public without our clients’ permission.</p>
+
+                <p>Thirdly, we should not make our work public without clients’ consent. The work here mainly means the
+                    GitHub
+                    repository we made for this project. It is our clients’ requirement to make the repository private,
+                    as the review
+                    data mentioned above is inside the repository and must be hidden from the public. Moreover,
+                    according to the
+                    contract, our clients will own all the code after we finish this module and Ocado might use it in
+                    the future, it
+                    depends on them whether the project will be Open Source or private.</p>
+
+                <h3 style="font-style: italic">Intellectual Property Type</h3>
+
+                <p>The most appropriate intellectual property type for this project would be Copyright. This is because
+                    Copyright is
+                    generally used to protect people’s original work and many software licenses are protected by it. In
+                    comparison,
+                    Trade Mark is usually used to protect an identifiable name for the product or company, and Patent is
+                    used to protect
+                    an original idea. Our project doesn’t really need an identifiable name because it won’t become very
+                    famous. Besides,
+                    since it involves code with Natural Language Processing and Machine Learning techniques, which are
+                    ideas that we
+                    have to learn from other people, we are not able to protect the work with a Patent either.</p>
+
+                <p>In terms of use of open source materials and our implementations, we have made use of many open
+                    sources libraries
+                    such as Pandas, Numpy, Scipy and Scikit-learn. They provide the necessary code for implementing our
+                    program and
+                    carrying out experiments on our work. Those libraries are all protected under Open Source license,
+                    which means we
+                    can use them for free as well as make changes to the code to satisfy our needs. On the other hand,
+                    our own work
+                    mainly consists of the code that makes use of those libraries to solve Machine Learning problems and
+                    research
+                    notebooks which record all the evaluations and analysis of our code.</p>
+
+                <p>The source code agreement that I would suggest is Freeware. Since our code is produced by university
+                    students and
+                    won’t be used to profit directly, there is no reason to make it a Proprietary Software or Shareware.
+                    Besides,
+                    because our code contains the Ocado’s review data, which is considered as confidential information
+                    and should be
+                    kept private, we can’t make our project an OSS (Open Source Software). Hence, Freeware is the best
+                    choice as it
+                    allows our product to be used by everyone while keeps control over the source code. However, this
+                    only serves as my
+                    own suggestion to the clients. According to the contract, Ocado will own all the output of this
+                    project and they
+                    tend to keep software completely confidential and not open source. This policy also makes sense, as
+                    they probably
+                    don’t want their opponents to make use of those applications to either profit for themselves or
+                    exploit Ocado’s
+                    weakness.</p>
+
+                <h3 style="font-style: italic">Data Privacy Consideration</h3>
+
+                <p>The main concern of data privacy in our project is towards the usage of review data given by our
+                    clients from Ocado.
+                    The data is in the form of a CSV file and contains information about 0.4 million reviews left by
+                    customers on
+                    Ocado’s website. In order to protect the data privacy in our project, we would design and implement
+                    the program
+                    according to CDPR requirements. </p>
+
+                <p>Firstly, we promote privacy and data protection in our project. We considered the issues regarding
+                    the usage of this
+                    data and discussed it with our clients. According to their requirements, we set our GitHub
+                    repository to private to
+                    protect the data file and we never leaked it to the public or shared it to anyone that’s not part of
+                    our team.</p>
+
+                <p>Secondly, we use appropriate methods to process our data. We have full control over where and how
+                    data is processed.
+                    We only use the data inside the project with the famous and trustable Python data science library
+                    Pandas. We would
+                    never pass the data to other programs that are unknown to us. By doing this, we can ensure the data
+                    is used in the
+                    correct and intended way.</p>
+
+                <p>Thirdly, we ensure our program only processes the necessary data. For example, when doing rating
+                    prediction from
+                    review text, we only used columns of rating, review text and review title from Ocado review file,
+                    while the other
+                    columns such as user name and product ID are not processed at all.</p>
+
+                <p>In the last place, since the data is from Ocado and was used in other Ocado’s software before, Ocado
+                    should have
+                    conducted the Privacy Impact Assessments before using this data. Thus, I believe as long as we use
+                    the data in the
+                    intended way and keep it private, we will not have any issue with data privacy.</p>
+
+                <h2 class="section-heading">User Manual and Deployment Guide</h2>
+                <p>The Python module is located at "./analyser", the pre-train models are stored at "./storage"</p>
+                <p>To use the pre-trained models, install all requirements in requirements.txt and download those two folders. Then use Python 3 to run:</p>
+
+                <p><code>from analyser.review_analyser import ReviewAnalyser</code></p>
+                <p><code>ra = ReviewAnalyser("./path/to/storage/")</code></p>
+                <p><code>ra.pred_ratings(["This is a very good product"])</code></p>
+
+                <h3 style="font-style: italic">ReviewAnalyser</h3>
+                <p><strong><strong>init</strong>(self, storage_path="./storage/")</strong></p>
+                <ul>
+                    <li><code>param storage_path</code> the path for storing local files. Must be a valid directory</li>
+                </ul>
+                <p><strong>new_rating_ml(self,
+                    x_train=None,y_train=None,filepath="./data/reviews-ranged-20181024.csv",train_size=100000,
+                    store=True)</strong></p>
+                <p>Creating new ML for star rating. It will store the ML trained at the storage_path specified when
+                    creating the object
+                    if store is True.</p>
+                <ul>
+                    <li><code>param x_train</code> Optional training samples. Should be a list of review text</li>
+                    <li><code>param y_train</code> Optional training labels. Must have same length as x_train. Should be
+                        a list of
+                        integers ranging from 1 to 5.
+                    </li>
+                    <li><code>param filepath</code> Optional file path to Ocado review data. Only used when x_train is
+                        None. The file
+                        must have same structure as the Ocado CSV file. If above three parameters are not provided,
+                        default path to
+                        Ocado CSV will be used.
+                    </li>
+                    <li><code>param train_size</code> The number of data used to train model. Only effective when
+                        reading from Ocado
+                        CSV.
+                    </li>
+                    <li><code>param store</code> whether to store models locally</li>
+                </ul>
+                <p><strong>new_helpfulness_ml(self, x_train=None,y_train=None,x_ratings_train=None,x_votes_train=None,
+                    filepath="./data/reviews-ranged-20181024.csv",train_size=100000, store=True)</strong></p>
+                <p>Creating new ML for helpfulness. It will store the ML trained at the storage_path specified when
+                    creating the object
+                    if store is Ture.</p>
+                <ul>
+                    <li><code>param x_train</code> Optional training samples. Should be a list of review text</li>
+                    <li><code>param y_train</code> Optional training labels. Must have same length as x_train. Should be
+                        a list of
+                        floats ranging from 0 to 1.
+                    </li>
+                    <li><code>param x_ratings_train</code> Additional features for training.</li>
+                    <li><code>param x_votes_train</code> Lits of vote counts used as samples weights during training
+                    </li>
+                    <li><code>param filepath</code> Optional file path to Ocado review data. Only used when x_train is
+                        None. The file
+                        must have same structure as the Ocado CSV file. If above parameters are not provided, default
+                        path to Ocado CSV
+                        will be used.
+                    </li>
+                    <li><code>param train_size</code> The number of data used to train model. Only effective when
+                        reading from Ocado
+                        CSV.
+                    </li>
+                    <li><code>param store</code> whether to store models locally</li>
+                </ul>
+                <p><strong>pred_ratings(self, x)</strong></p>
+                <p>Predict star ratings from the review text.</p>
+                <ul>
+                    <li><code>param x</code> A list of review text.</li>
+                    <li><code>return</code> A list of integers within range 1 to 5 indicating the star ratings.</li>
+                </ul>
+                <p><strong>pred_helpfulness(self, x, x_ratings=None)</strong></p>
+                <p>Predict helpfulness from the review text and potentially star ratings as well.</p>
+                <ul>
+                    <li><code>param x</code> A list of review text.</li>
+                    <li><code>param x_ratings</code> A list of star ratings for the corresponding reviews. If not
+                        provided, star rating
+                        ML will be applied to predict the ratings first.
+                    </li>
+                    <li><code>return</code> A list of floats within range 0 to 1 indicating the helpfulness</li>
+                </ul>
+                <h3 style="font-style: italic">ReviewData
+                </h3>
+                <p>A helper class for extracting data from Ocado CSV file. Should not be used on its own.</p>
+                <p><strong>extract_words(sentence)</strong></p>
+                <p>Static method for splitting a string into a list of words (as strings)</p>
+                <ul>
+                    <li><code>param sentence</code> String of natural language</li>
+                    <li><code>return</code> list(string)</li>
+                </ul>
+                <p><strong><strong>init</strong>(self, filepath="./../../data/reviews-ranged-20181024.csv",
+                    load_csv=True)</strong></p>
+                <ul>
+                    <li><code>param filepath</code> String representing the path to the csv file.</li>
+                    <li><code>param load_csv</code> Boolean on whether to read a csv file upon initialization.</li>
+                </ul>
+                <p><strong>clear_data(self)</strong></p>
+                <p>Clears all the review data from the object.</p>
+                <ul>
+                    <li><code>return</code> None</li>
+                </ul>
+                <p><strong>recalculate_binaries(self)</strong></p>
+                <p>Calculates data that is derived from other data.</p>
+                <ul>
+                    <li><code>return</code> None</li>
+                </ul>
+                <p><strong>append_review(self, text, rating, helpfulness, votes)</strong></p>
+                <p>Appends a single review to the data.</p>
+                <ul>
+                    <li><code>param text</code> String of the review's text.</li>
+                    <li><code>param rating</code> Integer of the review's star rating.</li>
+                    <li><code>param helpfulness</code> Float of the review's helpfulness value.</li>
+                    <li><code>param votes</code> Integer for number of votes on the review's helpfulness.</li>
+                    <li><code>return</code> None</li>
+                </ul>
+                <p><strong>filter_data_by_votes(self, min_votes)</strong></p>
+                <p>Returns new instance with data containing only at least given amount of votes</p>
+                <ul>
+                    <li><code>param min_votes</code> Minimum number of votes a review needs to be in new dataset.</li>
+                    <li><code>return</code> ReviewData instance</li>
+                </ul>
+                <p><strong>get_rebalanced_ratings(self, size=None, x_data=None, y_data=None)</strong></p>
+                <p>Get the balanced dataset of reviews and ratings</p>
+                <ul>
+                    <li><code>param size</code> the total amount of reviews included in the output. Minimum is 5 When
+                        using Ocado
+                        dataset, maximum value is 33507 * 5 as there are only 33507 2-star reviews
+                    </li>
+                    <li><code>param x_data</code> where the rebalanced text will come from. If None will be set to
+                        self.text.
+                    </li>
+                    <li><code>param y_data</code> where the rebalanced ratings will come from. If None will be set to
+                        self.ratings.
+                    </li>
+                    <li><code>return</code> (re_text, re_ratings)</li>
+                </ul>
+                <p><strong>get_rebalanced_ratings_with_tests(self, train_size, test_size)</strong></p>
+                <p>Get rebalanced training dataset for star rating and imbalanced testing dataset in a fair way. I.e.,
+                    training and
+                    testing dataset will not overlap.</p>
+                <ul>
+                    <li><code>param train_size</code> number of training samples needed. Minimum is 5</li>
+                    <li><code>param test_size</code> number of testing samples needed.</li>
+                    <li><code>return</code> (x_train, x_test, y_train, y_test)</li>
+                </ul>
+
+
+                <h2 class="section-heading">Gantt Chart</h2>
+                <p><img src="../../img/management-01.png" alt="Gantt Chart Table"
+                        style="float:left;max-width: 100%;height:auto;"></p>
+                <p><img src="../../img/management-02.png" alt="Gantt Bar Chart"
+                        style="float:left;max-width: 100%;height:auto;"></p>
             </div>
         </div>
     </div>

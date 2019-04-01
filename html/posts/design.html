@@ -55,6 +55,9 @@
                     <a class="nav-link" href="design.html">Design</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="testing.html">Testing</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="evaluation.html">Evaluation</a>
                 </li>
                 <li class="nav-item">
@@ -85,21 +88,72 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <h2 class="section-heading">Existing Solutions</h2>
+                <p>This page introduces the design of our code base -- a simple python module “analyser” containing a
+                    ReviewAnalyser class that can be used to predict rating and helpfulness given a list of review text.
+                    The class uses the best Natural Language Processing (NLP) and Machine Learning (ML) techniques we’ve
+                    found and can stores/reads the model configurations from local storage, thus users don’t have to
+                    train a model on their own.</p>
 
-                <p>Since above questions are very typical in machine learning, a lot of research has been done on them
-                    and many great solutions exist.</p>
+                <h2 class="section-heading">System Architecture</h2>
+                <p><img src="../../img/design-01.png" alt="System Architecture Diagram"
+                        style="float:left;max-width: 100%;height:auto;"></p>
+                <p>To use the ReviewAnalyser, some extra data or files are needed. If no models have been trained
+                    before, the user can use Ocado’s review data CSV file or files with a similar format. ReviewData
+                    class will parse the CSV file and select proper data for ReviewAnalyser to train the models. Or the
+                    user can pass in their own data for training. If models have been trained before, ReviewAnalyser
+                    will store the configurations in json, h5 and joblib files. The user can provide those files and
+                    ReviewAnalyser will create models based on those data.</p>
 
-                <h3 style="font-style: italic">Bag of Words</h3>
+                <p>Once the ReviewAnalyser has proper models, the user can input a list of review text and
+                    ReviewAnalyser will return a list of predicted star ratings or helpfulness.</p>
 
-                <p>In terms of natural language processing, the most straightforward way is “bag of words”, which simply
-                    assigns each unique word with an index, and converts a piece of text into a vector that represents
-                    occurrence of each word. [2] This is the best way for beginners to get started, but is also very
-                    limited in performance due to the complexity of human language. For instance, when we say “good”,
-                    “helpful” or “nice” we usually mean it’s good, but if we say “not good”, “can’t say it’s helpful”,
-                    meaning of the sentence would be reversed. More advanced techniques are needed to deal with this
-                    kind of situation.</p>
+                <h2 class="section-heading">Design Patterns</h2>
+                <p>Note: the code base is not the focus of our project and is thus very simple and uses few design
+                    patterns.</p>
 
+                <ol>
+                    <li>Decorator: ReviewAnalyser is wrapped around ML models from other libraries to affect their
+                        outputs, especially for star rating prediction -- original model would output a list of
+                        probabilities that the review falls into each category, but our code modifies it and outputs the
+                        predicted star rating directly based on the probabilities.
+                    </li>
+                    <li>Facade: our code hides the complexity of Keras and Sk-learn objects.</li>
+                    <li>Bridge: our code can be used to soften changes in Keras and Sk-learn libraries. If there were
+                        big updates that affect how code should be used, only modifying ReviewAnalyser would be
+                        sufficient.
+                    </li>
+                    <li>Adapter: Similar to bridge, it acts as an adapter to libraries including Numpy, Keras and
+                        Sk-learn.
+                    </li>
+                    <li>Test Driven Development: for the testable part of the code base, we used pytests to guide the
+                        development and to make sure our code contains no errors.
+                    </li>
+                </ol>
+
+                <h2 class="section-heading">Data Storage</h2>
+
+                <p>Upon creating a ReviewAnalyser instance, a storage path needs to be provided. It will read/write
+                    model configurations files to this path. Files including:</p>
+                <ol>
+                    <li>helpfulness_vect.joblib, rating_vect.joblib -- packed NLP processor objects for two problems
+                    </li>
+                    <li>helpfulness_ml.json, rating_ml.json -- Neural Network parameters</li>
+                    <li>helpfulness_ml.h5, rating_ml.h5 -- neuron weights</li>
+                </ol>
+
+                <h2 class="section-heading">Implemented Functionalities</h2>
+
+                <p>Our ReviewAnalyser is very simple. The User is able to import this class and use it to:</p>
+                <ol>
+                    <li>Train Machine Learning Models for helpfulness and star rating prediction, either using data
+                        inputted directly from the user or from a CSV file that satisfies Ocado’s format.
+                    </li>
+                    <li>Store the trained models locally in a specified location.</li>
+                    <li>Read model data from a specified location to generate a usable model without training.</li>
+                    <li>Use the models to predict helpfulness and star rating given review text.</li>
+                </ol>
+
+                <p>Detailed instructions on how to use the module can be found under Management page.</p>
             </div>
         </div>
     </div>
