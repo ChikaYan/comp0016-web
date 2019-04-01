@@ -88,20 +88,89 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <h2 class="section-heading">Existing Solutions</h2>
+                <h2 class="section-heading">Summary of Achievements</h2>
 
-                <p>Since above questions are very typical in machine learning, a lot of research has been done on them
-                    and many great solutions exist.</p>
+                <h3 style="font-style: italic">MoSCoW table:</h3>
 
-                <h3 style="font-style: italic">Bag of Words</h3>
+                <p><img src="../../img/evaluation-01.png" alt="MoSCoW table"
+                        style="float:left;max-width: 100%;height:auto;"></p>
+                <h3 style="font-style: italic">Known Bug List</h3>
 
-                <p>In terms of natural language processing, the most straightforward way is “bag of words”, which simply
-                    assigns each unique word with an index, and converts a piece of text into a vector that represents
-                    occurrence of each word. [2] This is the best way for beginners to get started, but is also very
-                    limited in performance due to the complexity of human language. For instance, when we say “good”,
-                    “helpful” or “nice” we usually mean it’s good, but if we say “not good”, “can’t say it’s helpful”,
-                    meaning of the sentence would be reversed. More advanced techniques are needed to deal with this
-                    kind of situation.</p>
+                <p><img src="../../img/evaluation-02.png" alt="Known Bug List"
+                        style="float:left;max-width: 100%;height:auto;"></p>
+                <h3 style="font-style: italic">Individual Contribution Table</h3>
+
+                <p><img src="../../img/evaluation-3.png" alt="Individual Contribution Table"
+                        style="float:left;max-width: 100%;height:auto;"></p>
+                <h2 class="section-heading">Critical Evaluations</h2>
+
+                <h3 style="font-style: italic">Functionality</h3>
+                <p>We’ve designed a python module containing a ReviewAnalyser class that can be called to use the best
+                    models we’ve
+                    found to solve each problem. Its functionalities cover all you need to predict rating and
+                    helpfulness -- you can
+                    train new models either from direct input or CSV file, store them locally, read local storages into
+                    memory and use
+                    the models to do star rating and helpfulness prediction.</p>
+
+                <h3 style="font-style: italic">Reproducibility/Stability</h3>
+                <p>As an important part of our project, we have produced many research notes recorded in Jupyter
+                    Notebooks. However,
+                    they’re not exactly reproducible -- it’s difficult to run all the experiments again and get exactly
+                    the same result
+                    (the overall results and conclusions drawn from the experiments would still be correct, but the
+                    numbers and details
+                    of plots may vary).</p>
+
+                <p>This is due to two reasons. First, running everything again would simply take too long, as many of
+                    our experiments
+                    are complicated require a lot of computational resources. Second, we decided not to fix a random
+                    state for all the
+                    models and data splittings. I.e., every time the experiments are run, different data will be used
+                    and models will be
+                    initialized with different parameters or weights. We made this decision because we want to
+                    demonstrate the
+                    unstableness in our models and eventually use them as an important part of evaluation as well.</p>
+
+                <h3 style="font-style: italic">Efficiency and Maintainability</h3>
+                <p>Since our code base is very simple, it’s very efficient to run and maintain. In addition, it is well
+                    documented so
+                    anyone can use and modify the code without any trouble.</p>
+
+                <h3 style="font-style: italic">Project management</h3>
+                <p>This project is well managed. We made our plans ahead and allocated different tasks to individuals.
+                    We also set
+                    deadlines for each other and made sure everyone was on the same page.</p>
+
+                <h2 class="section-heading">Future Work</h2>
+                <p>We’d like to try many new things with this project if we had more time.</p>
+
+                <ol>
+                    <li>Running more experiments. Due to hardware limits and time complexity, we were not able to
+                        experiment with all
+                        possible combinations of hyperparameters. Instead, we found the optimal value for on
+                        hyperparameter and assumed
+                        it would work best even if other hyperparameters have changed. If we had more time and better
+                        machines,
+                        experimenting with all combinations rough Random Search Cross-Validation or Grid Search
+                        Cross-Validation (for
+                        features) might produce more accurate results.
+                    </li>
+                    <li>Testing more models on helpfulness problem. Since classification is more popular than regression
+                        in ML, and our
+                        data for review helpfulness contain many noise samples, we decided to put more time and effort
+                        into star rating
+                        classification problem instead. With more time, we could develop more on the helpfulness problem
+                        and apply
+                        techniques such as Convolutional Neural Network and Word Embedding on it.
+                    </li>
+                    <li>Learning and applying more models. There are still many powerful ML models that we haven’t
+                        tried, such as
+                        Supported Vector Machine, Recursive Neural Network etc. We’d love to learn and use them to solve
+                        our problems.
+                    </li>
+                </ol>
+
 
             </div>
         </div>
