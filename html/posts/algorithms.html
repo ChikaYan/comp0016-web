@@ -88,7 +88,35 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <h2 class="section-heading">Description of Algorithms</h2>
+                <h2 class="section-heading">Table of Contents</h2>
+
+                <ol>
+                    <li><a href="#sec-1">Description of Algorithms</a></li>
+                    <li><a href="#sec-2">Experiment setting</a></li>
+                    <li><a href="#sec-3">Experiment results and Discussions</a></li>
+                    <ol>
+                        <li><a href="#sec-3-1">NLP Processors</a></li>
+                        <li><a href="#sec-3-2">5-Class Star Rating</a></li>
+                        <li><a href="#sec-3-3">Helpfulness</a></li>
+                    </ol>
+                    <li><a href="#sec-4">Conclusion</a></li>
+                    <li><a href="#sec-5">Reference</a></li>
+                    <!--<li>-->
+                        <!--<a href="#Lnk"></a>-->
+                    <!--</li>-->
+                    <!--<ol>-->
+                        <!--<li>-->
+                            <!--<a href="#Lnk"></a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#Lnk"></a>-->
+                        <!--</li>-->
+                    <!--</ol>-->
+                </ol>
+
+                <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+                <h2 class="section-heading" id="sec-1">Description of Algorithms</h2>
                 <p>We’ve experimented with a large number of Natural Language Processing (NLP) and Machine Learning (ML) algorithms to achieve our goal, which is to predict a review’s staring and helpfulness from its text. The NLP algorithms we’ve used include Bag Of Words (Unigram), N-grams (CountVectorizer), Term Frequency-Inverse Document Frequency (TF-IDFVectorizer) and Word Embedding. The ML algorithms include Linear Regression, Logistic Regression, Decision Tree, Random Forest, Gradient Boosting Machine, Feedforward Neural Network and Convolutional Neural Network.</p>
 
                 <p>Here, we’ll explain the theories behind some of the complex algorithms, whilst the descriptions of the simple ones can be found under Research page.</p>
@@ -132,7 +160,7 @@
 
                 <p>It works by having one or more Convolutional layers first, usually followed by a Max Pool layer, then the regular hidden and output layers. A convolutional layer is able to apply filters to the input and calculates the output based on values that are filtered. E.g., applying a filter of size 2 to input (1,2,3,4) will produce an output of (a,b,c,d), where “a” is calculated from (1,2), “b” is calculated from (2,3), “c” is calculated from (3,4) and the final “d” is the bias term. Max Pool layer is then used to reduce the complexity of the output and potentially prevent overfitting. It does this by only taking the maximum value among filter values. E.g., applying Max Pool of size 2 converts (a,b,c,d) to (max(a,b),max(c,d)). [9]</p>
 
-                <h2 class="section-heading">Experiment setting</h2>
+                <h2 class="section-heading" id="sec-2">Experiment setting</h2>
                 <p><blockquote><u>Data Source</u></blockquote></p>
                 <p>The data we used in this project comes from our client - Ocado’s website. It is a single CSV file containing information about 444,340 reviews. The information includes review time, an integer for product ID, an 0 or 1 integer indicating whether the reviewer has recommended this product to other customers, review title, review text, an integer in range 1 to 5 indicating the star rating, an float number indicating the helpfulness of this review and an integer indicating the number of people who rated its helpfulness.</p>
 
@@ -165,10 +193,10 @@
                 <p>F1 works by calculating a model’s precision (out of all samples it classified as class A, how many of them are correct) and recall (out of all samples that actually belong to class A, how many are classified to A correctly). It then combines them by the equation: f1 = 2*((precision*recall)/(precision+recall)), which becomes very small once any of the two numbers is small. Macro means F1 scores for all classes are equally weighted.[1] With this method, we can measure our models’ performances more accurately. The higher the F1 Macro score, the better the model.</p>
 
 
-                <h2 class="section-heading">Experiment results and Discussions</h2>
+                <h2 class="section-heading" id="sec-3">Experiment results and Discussions</h2>
                 <p>We’ve carried out a large number of experiments. Here, we’ll only discuss the crucial ones that have affected our decision of the final model. Details of the rest of experiments can be found in “jupyter” fold in our source code submission.</p>
 
-                <h3 style="font-style: italic">NLP Processors</h3>
+                <h3 style="font-style: italic" id="sec-3-1">NLP Processors</h3>
                 <p><blockquote><u>Bag of Words/Ngrams</u></blockquote>
                 <p>At first, we decided to use bag of words. However, bag of words model can be unreliable as it doesn't take any account of the context the word is used in. Common phrases like "out of date" "not very good" "not great" should have a very negative weight. In the current bag of words model words like "good" "great" "nice" have low weight, as they are used in both positive and negative review. So, we decided to use bag of ngrams. This model is going to give ngrams like "is good" a high positive weight and ngrams like "not good" a high negative weight. </p>
                 <p>Accuracy of bag of words and logistic regression model:</p>
@@ -192,7 +220,7 @@
                 <p>This is the comparison between CountVectorizer and TfidfVectorizer for random forest model on helpfulness. For both Vectorizer, the accuracy increases as the vocab limit increases. Tfidf seems to perform slightly better.</p>
 
 
-                <h3 style="font-style: italic">5-Class Star Rating</h3>
+                <h3 style="font-style: italic" id="sec-3-2">5-Class Star Rating</h3>
                 <p><blockquote><u>Logistic Regression</u></blockquote></p>
                 <p>1. Penalty Scheme </p>
                 <p>There are two penalty schemes available for Logistic Regression: L1 (least absolute deviations) and L2 (least squares error). At that stage, we’ve yet developed experiments with balanced training set, thus we trained and validated data using 5 fold Cross-Validation. The result is shown below.</p>
@@ -399,7 +427,7 @@
 
                 <p>7. Conclusion</p>
                 <p>The best settings for Convolutional Neural Network are: 3 consecutive Conv1D(filter num=128, size=3) + MaxPool(size)=3 followed by a fully connected layer with 80 neurons.</p>
-                <h3 style="font-style: italic">Helpfulness</h3>
+                <h3 style="font-style: italic" id="sec-3-3">Helpfulness</h3>
                 <p>Before approaching the helpfulness problem one needs to acknowledge the dataset’s problems:</p>
 
                 <div style="overflow:hidden;"><p><img src="./../../img/Image_41.png" ></p></div>
@@ -644,7 +672,7 @@
                 <p>Best settings for Feedforward Neural Network are: 2 hidden layers with 100 neurons on each layer, activation=sigmoid, optimizer=adam, loss=mean_abs_loss, epochs=4</p>
 
 
-                <h2 class="section-heading">Conclusion</h2>
+                <h2 class="section-heading" id="sec-4">Conclusion</h2>
 
                 <h3 style="font-style: italic">Star Rating</h3>
                 <p>After finding out the optimal settings for all of our models, we put everything together using the same training and testing scheme to compare their actual performances.</p>
@@ -673,7 +701,7 @@
                     <li>Random Forest was taking quite long to compute, and yet it performed the worst out of the 3 models, which suggests that non-linear models are not very good choices for predicting helpfulness.</li>
                     <li>Neural Network is the best, beating linear regression which only used ratings. This means that the NN model has managed to find some useful context/correlations in the bag of words - otherwise the score would’ve been much closer to linear regression which only used ratings.</li></ol>
 
-                <h2 class="section-heading">Reference</h2>
+                <h2 class="section-heading" id="sec-5">Reference</h2>
                 <ol><li>En.wikipedia.org. (2019). “F1 score.” [online] Available at: https://en.wikipedia.org/wiki/F1_score [Accessed 23 Mar. 2019].</li>
                     <li>Scikit-learn, “Linear Regression for Machine Learning,” Machine Learning Mastery, 27-Nov-2018. [Online]. Available: https://machinelearningmastery.com/linear-regression-for-machine-learning/. [Accessed: 23-Dec-2018].</li>
                     <li>A. Ng, “cost function,” Coursera. [Online]. Available: https://www.coursera.org/learn/machine-learning/supplement/nhzyF/cost-function. [Accessed: 24-Dec-2018].</li>
@@ -718,7 +746,7 @@
 <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="../../js/clean-blog.min.js"></script>
+<script src="../../js/clean-blog.js"></script>
 
 </body>
 
