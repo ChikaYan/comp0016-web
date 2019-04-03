@@ -283,7 +283,13 @@
 
                 <h2 class="section-heading">User Manual and Deployment Guide</h2>
                 <p>The Python module is located at "./analyser", the pre-train models are stored at "./storage"</p>
-                <p>To use the pre-trained models, install all requirements in requirements.txt and download those two folders. Then use Python 3 to run:</p>
+                <p>To use the pre-trained models, first install all requirements in requirements.txt at root
+                    folder: </p>
+                <code>pip3 install -r requirements.txt --user</code>
+                <p>Note: Note: package "pyspellchecker" may require extra permissions and need to be installed with
+                    `--user` tag. However, this package is not necessary if you just want to use review_analyser
+                    module.</p>
+                <p>Then download "./analyser" and "./storage" folders. Use Python 3 to run:</p>
 
                 <p><code>from analyser.review_analyser import ReviewAnalyser</code></p>
                 <p><code>ra = ReviewAnalyser("./path/to/storage/")</code></p>
